@@ -35,9 +35,9 @@ describe('UserService', () => {
 
   describe('create', () => {
     it('should create and save a new user', async () => {
-      const dto: CreateUserDto = { name : 'testuser' };
+      const dto: CreateUserDto = { name: 'testuser' };
       const createdUser = { id: 1, ...dto };
-      
+
       mockUsersRepo.create.mockReturnValue(createdUser);
       mockUsersRepo.save.mockResolvedValue(createdUser);
 
@@ -57,7 +57,9 @@ describe('UserService', () => {
 
       const result = await service.findAll();
 
-      expect(mockUsersRepo.find).toHaveBeenCalledWith({ relations: ['events'] });
+      expect(mockUsersRepo.find).toHaveBeenCalledWith({
+        relations: ['events'],
+      });
       expect(result).toEqual(usersArray);
     });
   });

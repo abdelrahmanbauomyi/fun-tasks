@@ -1,4 +1,9 @@
-import { BadRequestException, Injectable, Logger, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  Logger,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { LessThanOrEqual, Repository } from 'typeorm';
 import { Events } from 'src/events/entity/events.entity';
@@ -29,14 +34,16 @@ export class EventsService {
 
     //check missing feilds
     if (!dto.event_name || !dto.execute_at) {
-    this.logger.error(`Missing required fields: ${JSON.stringify(dto)}`);
-    throw new BadRequestException('event_name and execute_at are required');
+      this.logger.error(`Missing required fields: ${JSON.stringify(dto)}`);
+      throw new BadRequestException('event_name and execute_at are required');
     }
 
     //check executeAt date if it's invalid or has passed
     const executeAt = new Date(dto.execute_at);
-    if(executeAt<=now || isNaN(executeAt.getTime())){
-      this.logger.error(`execute_at date is in the past or invalid : ${dto.execute_at}`);
+    if (executeAt <= now || isNaN(executeAt.getTime())) {
+      this.logger.error(
+        `execute_at date is in the past or invalid : ${dto.execute_at}`,
+      );
       throw new BadRequestException('execute_at must be a valid date');
     }
 

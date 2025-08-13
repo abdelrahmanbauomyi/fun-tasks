@@ -18,7 +18,7 @@ export class UserService {
    */
   async create(dto: CreateUserDto): Promise<Users> {
     const user = this.usersRepo.create(dto);
-    this.logger.log(`Creating user:` ,user);
+    this.logger.log(`Creating user:`, user);
     return this.usersRepo.save(user);
   }
   /**
