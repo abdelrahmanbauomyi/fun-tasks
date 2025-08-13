@@ -1,98 +1,193 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# FunTasks Platform
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+An event scheduling platform built with NestJS, TypeORM, and PostgreSQL that allows users to create and manage scheduled actions or "events."
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 🚀 Features
 
-## Description
+- **Event Scheduling**: Schedule actions/events with flexible timing
+- **Event Tracking**: View all scheduled events for specific users
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 🛠 Tech Stack
 
-## Project setup
+- **Backend Framework**: NestJS
+- **Database ORM**: TypeORM
+- **Database**: PostgreSQL
+- **Runtime**: Node.js
 
+## 📋 Prerequisites
+
+Before running FunTasks, ensure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [PostgreSQL](https://www.postgresql.org/) database server
+- npm or yarn package manager
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repository
 ```bash
-$ npm install
+git clone <https://github.com/abdelrahmanbauomyi/fun-tasks.git>
+cd fun-tasks
 ```
 
-## Compile and run the project
-
+### 2. Install Dependencies
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm install
+# or
+yarn install
 ```
 
-## Run tests
+### 3. Database Setup
+1. Create a PostgreSQL database with your preferred name
+2. Make sure your PostgreSQL server is running
+3. Note down your database credentials
 
-```bash
-# unit tests
-$ npm run test
+### 4. Environment Configuration
+Create a `.env` file in the root directory of the project with your database and application configuration:
 
-# e2e tests
-$ npm run test:e2e
+```env
+# Database Configuration
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=your_postgres_username
+DB_PASSWORD=your_postgres_password
+DB_NAME=your_database_name
 
-# test coverage
-$ npm run test:cov
+# Application Configuration
+PORT=3000
 ```
 
-## Deployment
+**Important**: Replace the placeholder values with your actual database credentials and preferred settings.
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
+### 5. Run the Application
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+# Development mode
+npm run start:dev
+# or
+yarn start:dev
+
+# Production mode
+npm run start:prod
+# or
+yarn start:prod
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+The server will start on `http://localhost:3000` (or the port specified in your .env file).
 
-## Resources
+## 📚 API Documentation
 
-Check out a few resources that may come in handy when working with NestJS:
+### Base URL
+```
+http://localhost:3000
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+### Endpoints
 
-## Support
+#### 👥 User Management
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+##### Get All Users
+```http
+GET /users
+```
+**Description**: Retrieves all users in the system.
 
-## Stay in touch
+```
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+##### Add a New User
+```http
+POST /users
+```
+**Description**: Creates a new user in the system.
 
-## License
+**Request Body**:
+```json
+{
+  "name": "Ahmed",
+}
+```
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+
+#### 📅 Event Management
+
+##### Schedule a New Event
+```http
+POST /events/schedule
+```
+**Description**: Creates a new scheduled event/action.
+
+**Request Body**:
+```json
+{
+  "event_name": "Team Meeting",
+  "execute_at": "2025-08-13T02:45:00Z",
+  "user_id": "a8fdb239-d8fb-4d42-abd8-4bd1c63c144d"
+}
+
+```
+
+**Response**:
+```json
+{
+    "event_id": "a9737240-ed61-4f52-84bc-165e4868b9f6",
+    "event_name": "Team Meeting",
+    "execute_at": "2025-08-13T02:45:00Z",
+    "status": "pending",
+    "executed_at": null,
+    "user": {
+        "user_id": "a8fdb239-d8fb-4d42-abd8-4bd1c63c144d",
+        "name": "Ahmed"
+    }
+}
+```
+
+##### Get User's Scheduled Events
+```http
+GET /users/{user_id}/events
+```
+**Description**: Retrieves all scheduled events for a specific user.
+
+**Path Parameters**:
+- `user_id` (UUID): The ID of the user
+
+**Example**:
+```http
+GET /users/a8fdb239-d8fb-4d42-abd8-4bd1c63c144d/events
+```
+
+**Response**:
+```json
+[
+ {
+        "event_id": "1171fa8f-2081-4103-88ca-112470c550d4",
+        "event_name": "Team Meeting",
+        "execute_at": "2025-08-13T02:01:00.000Z",
+        "status": "executed",
+        "executed_at": "2025-08-13T02:11:00.014Z",
+        "user": {
+            "user_id": "a8fdb239-d8fb-4d42-abd8-4bd1c63c144d",
+            "name": "Ahmed"
+        }
+    },
+    {
+        "event_id": "261492f6-8fbc-468c-b4fe-c61200b15529",
+        "event_name": "Team Meeting",
+        "execute_at": "2025-08-13T02:14:00.000Z",
+        "status": "executed",
+        "executed_at": "2025-08-13T02:14:00.028Z",
+        "user": {
+            "user_id": "a8fdb239-d8fb-4d42-abd8-4bd1c63c144d",
+            "name": "Ahmed"
+        }
+    },
+]
+```
+
+### Running Tests
+```bash
+# Unit tests
+npm run test
+# or
+yarn test
+
+```
