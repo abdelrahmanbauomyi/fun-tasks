@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { Events } from './events.model';
+import { Events } from 'src/events/entity/events.entity';
 @Entity()
 export class Users {
   @PrimaryGeneratedColumn('uuid')
@@ -8,6 +8,6 @@ export class Users {
   @Column()
   name: string;
 
-  @OneToMany(() => Events, (events) => events.users)
+  @OneToMany(() => Events, (events) => events.user)
   events: Events[];
 }
