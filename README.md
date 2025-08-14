@@ -80,7 +80,10 @@ The server will start on `http://localhost:3000` (or the port specified in your 
 ```
 http://localhost:3000
 ```
-
+### Swagger docs
+```
+http://localhost:3000/api-docs#/
+```
 ### Endpoints
 
 #### 👥 User Management
